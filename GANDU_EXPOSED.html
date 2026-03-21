@@ -90,14 +90,13 @@ p { line-height: 1.7; color: #444; margin-bottom: 18px; }
     <div class="comment-form">
         <input type="text" id="fake-comment-input-g" placeholder="Write a comment..." />
         <button id="fake-comment-btn-g">Post</button>
-        <p id="fake-comment-error-g">Oops! Comments are temporarily disabled 😭</p>
+        <p id="fake-comment-error-g">Oops! Comments are temporarily disabled</p>
     </div>
 </div>
 
 <script>
-// Fake comment fail
 document.getElementById("fake-comment-btn-g").addEventListener("click", function(){
-    document.getElementById("fake-comment-error-g").style.display = "block";
+    alert("Oops! Comments are temporarily disabled");
 });
 </script>
 </body>
