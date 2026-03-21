@@ -4,31 +4,217 @@
 <meta charset="UTF-8">
 <title>GANDU EXPOSED</title>
 <link rel="icon" href="LOGO.jpeg" type="image/jpeg">
-<style>
-body { font-family: 'Segoe UI', Arial; margin: 0; background: #f2f2f2; }
-header { background: #111; color: white; padding: 25px; text-align: center; border-bottom: 4px solid #b30000; }
-header img.logo { height: 50px; vertical-align: middle; margin-right: 10px; }
-header h1 { display: inline-block; vertical-align: middle; margin: 0; font-size: 36px; }
-.container { max-width: 850px; margin: 40px auto; background: white; padding: 35px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-h2 { margin-top: 0; font-size: 28px; color: #111; }
-.meta { color: #777; font-size: 14px; margin-bottom: 25px; }
-p { line-height: 1.7; color: #444; margin-bottom: 18px; }
-.back-btn { display: inline-block; margin-top: 25px; padding: 10px 16px; background: #111; color: white; border-radius: 6px; text-decoration: none; }
-.back-btn:hover { background: #333; }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Fake Comments CSS */
-.fake-comments-container { margin-top: 30px; padding: 20px; background: #111; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2); color: #eee; }
-.fake-comments-container h3 { margin-top: 0; font-size: 18px; color: #fff; margin-bottom: 15px; }
-.comment { display: flex; align-items: flex-start; background: #222; padding: 12px 15px; margin-bottom: 12px; border-radius: 8px; border-left: 4px solid #b30000; transition: transform 0.2s, box-shadow 0.2s; }
-.comment:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-.avatar { border-radius: 50%; width: 40px; height: 40px; margin-right: 12px; flex-shrink: 0; }
-.comment-content p { margin: 0; font-size: 14px; color: #eee; }
-.comment-content .time { font-size: 11px; color: #aaa; margin-top: 2px; }
-.comment-form { margin-top: 20px; }
-.comment-form input { width: 70%; padding: 8px; border-radius: 5px; border: none; margin-right: 10px; }
-.comment-form button { padding: 8px 14px; border-radius: 5px; border: none; background: #b30000; color: white; cursor: pointer; transition: background 0.2s, transform 0.2s; }
-.comment-form button:hover { background: #ff1a1a; transform: translateY(-1px); }
-#fake-comment-error { margin-top: 8px; color: #ff4d4d; font-size: 13px; display: none; }
+<style>
+/* ---------------- Base Styles ---------------- */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #f2f2f2;
+    line-height: 1.7;
+    color: #444;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    border-bottom: 4px solid #b30000;
+}
+
+header img.logo {
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    font-size: 32px;
+}
+
+.container {
+    max-width: 850px;
+    width: 90%; /* Responsive width */
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 26px;
+    color: #111;
+}
+
+.meta {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 16px;
+    background: #111;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background: #333;
+}
+
+/* ---------------- Fake Comments ---------------- */
+.fake-comments-container {
+    margin-top: 25px;
+    padding: 20px;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    color: #eee;
+}
+
+.fake-comments-container h3 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    background: #222;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #b30000;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.comment:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.comment-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #eee;
+}
+
+.comment-content .time {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 2px;
+}
+
+/* ---------------- Comment Form ---------------- */
+.comment-form {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Wrap on small screens */
+    gap: 8px;
+}
+
+.comment-form input {
+    flex: 1 1 65%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.comment-form button {
+    flex: 1 1 25%;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: none;
+    background: #b30000;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.comment-form button:hover {
+    background: #ff1a1a;
+    transform: translateY(-1px);
+}
+
+/* ---------------- Responsive Media Queries ---------------- */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .avatar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .comment-content p {
+        font-size: 13px;
+    }
+
+    .comment-content .time {
+        font-size: 10px;
+    }
+
+    .comment-form input {
+        flex: 1 1 100%;
+    }
+
+    .comment-form button {
+        flex: 1 1 100%;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header img.logo {
+        height: 40px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .back-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
 </style>
 </head>
 <body>
