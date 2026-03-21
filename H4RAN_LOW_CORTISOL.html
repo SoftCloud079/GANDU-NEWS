@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Haran Aura Full</title>
+<link rel="icon" href="logo.jpg" type="image/jpeg">
+<style>
+body { font-family: 'Segoe UI', Arial; margin: 0; background: #f2f2f2; }
+header { background: #111; color: white; padding: 25px; text-align: center; border-bottom: 4px solid #b30000; }
+header img.logo { height: 50px; vertical-align: middle; margin-right: 10px; }
+header h1 { display: inline-block; vertical-align: middle; margin: 0; font-size: 36px; }
+.container { max-width: 850px; margin: 40px auto; background: white; padding: 35px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+h2 { margin-top: 0; font-size: 28px; color: #111; }
+.meta { color: #777; font-size: 14px; margin-bottom: 25px; }
+p { line-height: 1.7; color: #444; margin-bottom: 18px; }
+.back-btn { display: inline-block; margin-top: 25px; padding: 10px 16px; background: #111; color: white; border-radius: 6px; text-decoration: none; }
+.back-btn:hover { background: #333; }
+
+/* Fake Comments CSS */
+.fake-comments-container { margin-top: 30px; padding: 20px; background: #111; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2); color: #eee; }
+.fake-comments-container h3 { margin-top: 0; font-size: 18px; color: #fff; margin-bottom: 15px; }
+.comment { display: flex; align-items: flex-start; background: #222; padding: 12px 15px; margin-bottom: 12px; border-radius: 8px; border-left: 4px solid #b30000; transition: transform 0.2s, box-shadow 0.2s; }
+.comment:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.avatar { border-radius: 50%; width: 40px; height: 40px; margin-right: 12px; flex-shrink: 0; }
+.comment-content p { margin: 0; font-size: 14px; color: #eee; }
+.comment-content .time { font-size: 11px; color: #aaa; margin-top: 2px; }
+.comment-form { margin-top: 20px; }
+.comment-form input { width: 70%; padding: 8px; border-radius: 5px; border: none; margin-right: 10px; }
+.comment-form button { padding: 8px 14px; border-radius: 5px; border: none; background: #b30000; color: white; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+.comment-form button:hover { background: #ff1a1a; transform: translateY(-1px); }
+#fake-comment-error-h { margin-top: 8px; color: #ff4d4d; font-size: 13px; display: none; }
+</style>
+</head>
+<body>
+<header>
+    <a href="index.html"><img src="logo.jpg" alt="GANDU NEWS Logo" class="logo"></a>
+    <h1>GANDU NEWS</h1>
+</header>
+
+<div class="container">
+    <h2>Haran's Low Cortisol Levels Make Him Surprisingly "Aura Full"</h2>
+    <p class="meta">Published: 2026</p>
+    <p>In an unexpected twist during a chaotic group chat, friends discovered that Haran's secret to staying so calm and collected is his surprisingly low cortisol levels...</p>
+    <!-- More article content here -->
+</div>
+
+<!-- Fake Comments -->
+<div class="fake-comments-container">
+    <h3>Comments</h3>
+    <div class="comment">
+        <img src="https://i.pravatar.cc/40?img=20" alt="avatar" class="avatar">
+        <div class="comment-content">
+            <p><strong>chillvibes:</strong> How is he this calm??? Teach me your ways 😌</p>
+            <p class="time">1 hour ago</p>
+        </div>
+    </div>
+    <div class="comment">
+        <img src="https://i.pravatar.cc/40?img=22" alt="avatar" class="avatar">
+        <div class="comment-content">
+            <p><strong>calmcollector:</strong> Low cortisol legend! Aura full verified 🌟</p>
+            <p class="time">45 minutes ago</p>
+        </div>
+    </div>
+    <div class="comment">
+        <img src="https://i.pravatar.cc/40?img=24" alt="avatar" class="avatar">
+        <div class="comment-content">
+            <p><strong>chaoswatcher:</strong> Meanwhile the rest of us are losing our minds 😭</p>
+            <p class="time">10 minutes ago</p>
+        </div>
+    </div>
+
+    <div class="comment-form">
+        <input type="text" id="fake-comment-input-h" placeholder="Write a comment..." />
+        <button id="fake-comment-btn-h">Post</button>
+        <p id="fake-comment-error-h">Oops! Comments are temporarily disabled 😭</p>
+    </div>
+</div>
+
+<script>
+document.getElementById("fake-comment-btn-h").addEventListener("click", function(){
+    document.getElementById("fake-comment-error-h").style.display = "block";
+});
+</script>
+
+<a href="index.html" class="back-btn">← Back to Home</a>
+</body>
+</html>

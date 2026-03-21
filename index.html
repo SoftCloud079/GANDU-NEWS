@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GANDU NEWS</title>
+<link rel="icon" href="logo.jpg" type="image/jpeg">
+<style>
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #f2f2f2;
+}
+
+/* Header */
+header {
+    background: #111;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 4px solid #b30000;
+    position: relative;
+}
+
+header img.logo {
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+}
+
+/* Articles */
+.article {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.article h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #111;
+}
+
+.article p {
+    color: #555;
+    margin: 10px 0 20px;
+}
+
+.read-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #111;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.read-btn:hover {
+    background: #b30000;
+    transform: translateY(-2px);
+}
+
+/* Fade-in animation for articles */
+.article {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.4s forwards;
+}
+
+.article:nth-child(1) { animation-delay: 0.1s; }
+.article:nth-child(2) { animation-delay: 0.2s; }
+.article:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer links */
+footer a.fake-link {
+    color:#eee; /* text color white/grey */
+    text-decoration:none;
+    margin:0 10px;
+    transition: color 0.2s;
+    cursor:pointer;
+}
+footer a.fake-link:hover {
+    color:#ff4d4d; /* hover effect red */
+}
+</style>
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" alt="GANDU NEWS Logo" class="logo">
+    <h1>GANDU NEWS</h1>
+</header>
+
+<div class="container">
+    <div class="article">
+        <h2>GANDU BECOMES VERY SCARED CAT</h2>
+        <p>Leaked chat exposes shocking secrets, tension, and unexpected fear...</p>
+        <a class="read-btn" href="GANDU_EXPOSED.html">Read Full Story</a>
+    </div>
+
+    <div class="article">
+        <h2>Haran’s Low Cortisol Makes Him “Aura Full”</h2>
+        <p>Calm energy in total chaos leaves friends confused and impressed...</p>
+        <a class="read-btn" href="H4RAN_LOW_CORTISOL.html">Read Full Story</a>
+    </div>
+
+    <div class="article">
+        <h2>PIE Caught Making Propaganda and Fake Apologies</h2>
+        <p>Jealousy over missing the Big IKEA in Switzerland sparks chaos...</p>
+        <a class="read-btn" href="PIE_SHOCKS_FANS_WITH_PROPAGANDA.html">Read Full Story</a>
+    </div>
+</div>
+
+<!-- FOOTER START -->
+<footer style="background:#111; color:#eee; text-align:center; padding:20px 10px; border-top:4px solid #b30000; margin-top:40px; font-size:16px;">
+    GANDU NEWS
+    <p style="margin-top:10px;">
+        <a href="#" class="fake-link">About Us</a> |
+        <a href="#" class="fake-link">Contact</a> |
+        <a href="#" class="fake-link">Privacy Policy</a>
+    </p>
+</footer>
+
+<script>
+    // Make all footer links show fake alert
+    const fakeLinks = document.querySelectorAll('.fake-link');
+    fakeLinks.forEach(link => {
+        link.addEventListener('click', function(e){
+            e.preventDefault();
+            alert('Sorry, this page is not available in your region 😭');
+        });
+    });
+</script>
+
+</body>
+</html>
