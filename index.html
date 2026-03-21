@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GANDU NEWS</title>
 <link rel="icon" href="LOGO.jpeg" type="image/jpeg">
 <style>
+/* Basic Styles */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
@@ -15,10 +17,9 @@ body {
 header {
     background: #111;
     color: white;
-    padding: 30px 20px;
+    padding: 25px 20px;
     text-align: center;
     border-bottom: 4px solid #b30000;
-    position: relative;
 }
 
 header img.logo {
@@ -31,14 +32,14 @@ header h1 {
     display: inline-block;
     vertical-align: middle;
     margin: 0;
-    font-size: 40px;
+    font-size: 36px;
     letter-spacing: 1px;
 }
 
 /* Container */
 .container {
     max-width: 1000px;
-    margin: 60px auto 40px;
+    margin: 50px auto;
     padding: 0 20px;
 }
 
@@ -53,7 +54,7 @@ header h1 {
 }
 
 .article:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
@@ -84,7 +85,7 @@ header h1 {
     transform: translateY(-2px);
 }
 
-/* Fade-in animation for articles */
+/* Fade-in effect */
 .article {
     opacity: 0;
     transform: translateY(10px);
@@ -99,16 +100,34 @@ header h1 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Footer links */
-footer a.fake-link {
-    color:#eee; /* text color white/grey */
-    text-decoration:none;
-    margin:0 10px;
-    transition: color 0.2s;
-    cursor:pointer;
+/* Footer */
+footer {
+    background: #111;
+    color: #eee;
+    text-align: center;
+    padding: 20px 10px;
+    border-top: 4px solid #b30000;
+    font-size: 16px;
+    margin-top: 40px;
 }
+
+footer a.fake-link {
+    color: #eee;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
 footer a.fake-link:hover {
-    color:#ff4d4d; /* hover effect red */
+    color: #ff4d4d;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    header h1 { font-size: 28px; }
+    .article h2 { font-size: 20px; }
+    .read-btn { padding: 8px 14px; font-size: 13px; }
 }
 </style>
 </head>
@@ -139,8 +158,7 @@ footer a.fake-link:hover {
     </div>
 </div>
 
-<!-- FOOTER START -->
-<footer style="background:#111; color:#eee; text-align:center; padding:20px 10px; border-top:4px solid #b30000; margin-top:40px; font-size:16px;">
+<footer>
     GANDU NEWS
     <p style="margin-top:10px;">
         <a href="#" class="fake-link">About Us</a> |
@@ -150,7 +168,7 @@ footer a.fake-link:hover {
 </footer>
 
 <script>
-    // Make all footer links show fake alert
+    // Footer links show alert
     const fakeLinks = document.querySelectorAll('.fake-link');
     fakeLinks.forEach(link => {
         link.addEventListener('click', function(e){
